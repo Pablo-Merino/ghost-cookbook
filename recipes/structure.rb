@@ -8,6 +8,7 @@ end
 execute 'clone-stable-ghost' do
   command "cd #{node['ghost']['apps_dir']} && git clone "\
           'https://github.com/TryGhost/Ghost.git -b stable ghost'
+  returns [0, 128]
   user 'root'
 end
 

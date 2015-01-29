@@ -12,3 +12,10 @@ default['ghost']['local_domain'] = 'ghost-pablo.local'
 
 default['ghost']['mysql_password'] = 'change-me-lol'
 default['ghost']['mysql_db'] = 'ghost_production'
+
+default['ruby']['rubies'] = ['2.1.4']
+default['ruby']['ruby_build_mirror'] =
+  'https://github.com/sstephenson/ruby-build.git'
+default['ruby']['chruby_mirror'] =
+  'https://github.com/postmodern/chruby/archive/v0.3.8.tar.gz'
+default['ruby']['rubies_path'] = '/opt/rubies'

@@ -31,6 +31,7 @@ node.default['nodejs']['version'] = '0.10.26'
     ghost-pablo::configuration
     ghost-pablo::nginx_config
     ghost-pablo::database
-    ghost-pablo::install ).each do |recipe|
+    ghost-pablo::install
+    ghost-pablo::ruby_install ).each do |recipe|
   include_recipe recipe
 end
