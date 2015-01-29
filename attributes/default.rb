@@ -10,5 +10,5 @@ default['ghost']['port'] = 2368
 default['ghost']['env'] = 'production'
 default['ghost']['local_domain'] = 'ghost-pablo.local'
 
-default['ghost']['mysql_password'] = 'P4bl0SQ1'
+default['ghost']['mysql_password'] = 'change-me-lol'
 default['ghost']['mysql_db'] = 'ghost_production'
