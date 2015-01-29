@@ -1,0 +1,16 @@
+{
+  "ghost": {
+    "name": "ghost",
+    "user": "ghost",
+    "group": "ghost",
+    "home": "/opt/ghost",
+    "apps_dir": "/www/apps",
+    "tmp_file": "tmp/ghost_master.zip",
+    "mirror": "https://github.com/TryGhost/Ghost/archive/master.zip",
+    "port": "2368",
+    "env": "production",
+    "local_domain": "ghost-pablo.local",
+    "mysql_password": "P4bl0SQ1",
+    "mysql_db": "ghost_production"
+  }
+}

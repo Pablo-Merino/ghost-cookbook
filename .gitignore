@@ -1,0 +1,9 @@
+*.lock
+
+.bundle
+.kitchen
+.kitchen.local.yml
+.vagrant
+.berkshelf
+graph.png
+.chef-runner/
