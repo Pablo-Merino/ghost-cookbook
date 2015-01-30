@@ -1,14 +1,15 @@
-apt_package 'mysql-server' do
-  action :install
+mysql_service 'default' do
+  port '3306'
+  version '5.5'
+  initial_root_password node['ghost']['mysql_password']
+  action [:create, :start]
 end
 
-execute 'change-mysql-root-password' do
-  command "mysqladmin -u root -p'' password #{node['ghost']['mysql_password']}"
-  returns [0, 1]
-end
-
-execute 'create-mysql-database' do
-  command "mysql -uroot -p'#{node['ghost']['mysql_password']}' -e "\
-          "\"create database #{node['ghost']['mysql_db']}\""
-  returns [0, 1]
+mysql_database 'ghost_production' do
+  connection(
+    host: '127.0.0.1',
+    username: 'root',
+    password: node['ghost']['mysql_password']
+  )
+  action :create
 end

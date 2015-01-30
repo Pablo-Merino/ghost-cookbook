@@ -16,6 +16,15 @@ Vagrant.configure("2") do |config|
 
   config.vm.network :private_network, ip: "33.33.33.200"
 
+  config.vm.provider :virtualbox do |vb|
+    vb.customize [
+      'modifyvm', :id, 
+      '--natdnshostresolver1', 'on',
+      '--memory', '1024',
+      '--cpus', '2'
+    ]
+  end
+
   config.vm.provision :chef_solo do |chef|
     chef.log_level = :debug
 

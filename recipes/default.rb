@@ -1,5 +1,6 @@
 user node['ghost']['user'] do
   home node['ghost']['home']
+  shell '/bin/bash'
 end
 
 group node['ghost']['group'] do
@@ -22,8 +23,11 @@ end
 
 node.default['nodejs']['version'] = '0.10.26'
 
-%w( git
+%w( apt
+    git
     zip
+    build-essential::default
+    chruby::system
     nodejs::nodejs_from_binary
     nodejs::npm
     nginx
@@ -31,7 +35,6 @@ node.default['nodejs']['version'] = '0.10.26'
     ghost-pablo::configuration
     ghost-pablo::nginx_config
     ghost-pablo::database
-    ghost-pablo::install
-    ghost-pablo::ruby_install ).each do |recipe|
+    ghost-pablo::install ).each do |recipe|
   include_recipe recipe
 end
